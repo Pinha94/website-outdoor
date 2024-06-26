@@ -5,8 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Outdoor</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bdf4119778.js" crossorigin="anonymous"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="src/css/normalize.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-    
+    <header id="header">
+        <div class="container">
+            <nav id="menuPrimary">
+                <a class="item-menu" href="#">Nosotros</a>
+                <a class="item-menu" href="#">Explorar</a>
+                <a class="item-menu map-marker" href="#"><i class="fa fa-map-marker"></i></a>
+                <a class="item-menu" href="#">El diario</a>
+                <div class="buscador">
+                    <label for="search"><i class="fa fa-search"></i></label>
+                    <input type="text" name="search" id="search" placeholder="Buscar">
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="portada">
+        <img class="desktop background" src="src/images/portada.jpg">
+        <img class="mobile background" src="src/images/portada-mobile.jpg">
+        <div class="title-content">
+            <h1 class="title">El Gran Aire Libre</h1>
+            <h6 class="subtitle">Asómbrate a menudo, asómbrate siempre</h6>
+        </div>
+    </section>
+    <main id="main">
+        <section id="exploreWorld" class="section">
+            <div class="section">
+                <div class="title-content text-center">
+                    <h2 class="section-title">Explore the world</h2>
+                    <p>We seek provide the most authentic content from athietes, adventurers, explorers and travellers around the world. Our long-term mission is to aducate, inspire and enable all peoples to experience & protect wilderness.</p>
+                </div>
+                <div class="posts">
+                    <ul class="grid">
+                        <li class="post">
+                            <img src="src/images/destino01.jpg" alt="Usuahia" class="image">
+                            <div class="name-content">
+                                <h3 class="name">Usuahia</h3>
+                                <h5 class="subtitle">Tierra del fuego</h5>
+                            </div>
+                            <div class="description">
+                                <p>Ushuaia, conocida como la ciudad más austral del mundo, es una puerta de entrada a la belleza indómita de la Patagonia argentina. Ubicada en la Isla Grande de Tierra del Fuego, ofrece paisajes impresionantes que combinan montañas, glaciares y mares. Los visitantes pueden explorar el Parque Nacional Tierra del Fuego, navegar por el Canal Beagle y maravillarse con la fauna local, incluyendo pingüinos y lobos marinos. Ushuaia también es el punto de partida para muchas expediciones antárticas.</p>
+                            </div>
+                        </li>
+                        <li class="post">
+                            <img src="src/images/destino02.jpg" alt="CABA" class="image">
+                            <div class="name-content">
+                                <h3 class="name">Ciudad de Buenos Aires</h3>
+                                <h5 class="subtitle">Buenos Aires</h5>
+                            </div>
+                            <div class="description">
+                                <p>La vibrante Ciudad de Buenos Aires, capital de Argentina, es un crisol de cultura, historia y modernidad. Conocida por su arquitectura europea, barrios históricos y vida nocturna animada, Buenos Aires ofrece una experiencia urbana inigualable. Pasea por el elegante barrio de Recoleta, descubre la pasión del tango en San Telmo, y disfruta de la gastronomía en Palermo. No te pierdas la icónica Plaza de Mayo, la histórica Casa Rosada y el animado barrio de La Boca, famoso por sus casas coloridas y su energía futbolística.</p>
+                            </div>
+                        </li>
+                        <li class="post">
+                            <img src="src/images/destino03.jpg" alt="Cafayate" class="image">
+                            <div class="name-content">
+                                <h3 class="name">Cafayate</h3>
+                                <h5 class="subtitle">Salta</h5>
+                            </div>
+                            <div class="description">
+                                <p>Cafayate, ubicada en la provincia de Salta, es un encantador destino en el corazón de los Valles Calchaquíes, conocido por sus impresionantes paisajes y su excelente vino Torrontés. Rodeada de viñedos y montañas, Cafayate invita a los visitantes a degustar vinos en sus bodegas, explorar formaciones rocosas únicas en la Quebrada de las Conchas y disfrutar de la tranquilidad y belleza natural del área. Además, su clima soleado y sus tradiciones culturales hacen de Cafayate un lugar perfecto para relajarse y conectarse con la esencia del noroeste argentino.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="link-content">
+                    <a class="link" href="#">See more</a>
+                </div>
+            </div>
+        </section>
+        <section id="journal" class="section">
+            <div class="container">
+                <div class="title-content text-center">
+                    <h2 class="section-title">El diario</h2>
+                    <p>Nuestras historias favoritas sobre tierras públicas y oportunidades para que usted participe en la protección de sus experiencias al aire libre.</p>
+                </div>
+                <div class="posts">
+                    <ul class="grid">
+                        <li class="post">
+                            <img class="image" src="src/images/surf.jpg" alt="Surf">
+                            <span class="date">5 Enero 2024</span>
+                            <div class="text">
+                                <h5 class="title">Surfeando en aguas cálidas</h5>
+                                <p class="extract">La experiencia de surf fue increíble: deslizarme por olas perfectas, sentir la brisa marina en mi rostro y disfrutar del sol tropical fue inolvidable.</p>
+                            </div>
+                        </li>
+                        <li class="post">
+                            <img class="image" src="src/images/trekking.jpg" alt="Trekking">
+                            <span class="date">23 Mayo 2024</span>
+                            <div class="text">
+                                <h5 class="title">Descubriendo nuevos horizontes</h5>
+                                <p class="extract">Caminar por senderos naturales, respirar aire fresco de montaña y admirar vistas panorámicas me hizo sentir completamente conectado con la naturaleza.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="link-content">
+                    <a class="link" href="#">See more</a>
+                </div>
+            </div>
+        </section>
+        <section class="section section-bg text-center">
+            <img class="desktop" src="src/images/fondo-2.jpg" alt="Fondo">
+            <img class="mobile" src="src/images/fondo-2-mobile.jpg" alt="Fondo">
+        </section>
+    </main>
+    <footer id="footer">
+        &copy; Derechos reservados Pinharanda Lautaro
+    </footer>
 </body>
 </html>
