@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --bg-color: #121212;
+    --text-color: #FFF;
+    --info-color: #007bff;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+/* ================================
+        Globales                
+=================================== */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px; 10px/16px = 62.5% */
+    width: 100%;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    color: inherit;
+    margin: 0; /* Reset margin for all elements */
+    padding: 0; /* Reset padding for all elements */
+}
+body {
+    width: 100%;
+    font-size: 1.6rem; /* 16px */
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color, white); /* Use a variable for text color with a fallback to white */
+    overflow-x: hidden;
+}
+a {text-decoration: none;}
+img {max-width: 100%;}
+ul, li {
+    list-style: none;
+    margin: 0;
+}
+.section {
+    margin: 4rem auto 10rem;
+    &.section-bg {
+        margin: -12rem auto -6rem;
+        position: relative;
+        z-index: -1;
+    }
+    .title-content {
+        max-width: 600px;
+        margin: 0 auto 8rem;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        .section-title {
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+    }
+    .link-content {
+        margin: 2rem auto;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: var(--info-color);
+        .link {
+            &::before {
+                content: "\f101";
+                font-family: "Fontawesome";
+                position: relative;
+                right: .5rem;
+            }
+            &::after {
+                content: "\f100";
+                font-family: "Fontawesome";
+                position: relative;
+                left: .5rem;
+            }
+        }
+    }
+}
+
+
+/* ================================
+        Utilidades              
+=================================== */
+.container {
+    width: calc(100% - 6rem);
+    max-width: 100rem;
+    margin: 0 auto;
+}
+.text-center {text-align: center;}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+}
+.desktop {display: none;}
+@media (min-width:780px) {
+    .desktop {display: block;}
+    .mobile {display: none;}
+}
+
+/* ================================
+        Header                
+=================================== */
+#header {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 2rem 0;
+}
+#menuPrimary {
+    display: flex;
+    justify-content: center;
+    flex-basis: fill;
+    flex-wrap: wrap;
+    gap: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    & > * {
+        flex-grow: 1;
+        // flex-basis: 0;
+    }
+    .item-menu {
+        transition: all 300ms;
+        &:hover {text-shadow: 0 0 1rem white;}
+    }
+    .buscador {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        & label {cursor: pointer;}
+        & > input {
+            background: none;
+            border: none;
+            width: 7rem;
+            font-size: 80%;
+            text-transform: uppercase;
+            border-bottom: solid .2rem white;
+            padding: .2rem;
+            outline: none !important;
+        }
+    }
+}
+@media (max-width:640px) {
+    #menuPrimary {
+        gap: 2rem 1rem;
+        .buscador {
+            flex-basis: calc(100% - 5rem);
+            padding-right: 1rem;
+            & > input {
+                width: 100%;
+            }
+        }
+        .map-marker {order: 5;}
+    }
+}
+
+/* ================================
+        Portada
+=================================== */
+#portada {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    .background {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    .title-content {
+        text-align: center;
+        .title {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+        }
+        .subtitle {
+            font-size: 1.6rem;
+            font-weight: 300;
+        }
+    }
+}
+
+/* ================================
+        Explire the World
+=================================== */
+#exploreWorld {
+    margin-top: 0;
+    position: relative;
+    .posts .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 48rem;
+        align-content: center;
+        width: min-content;
+        margin: 0 auto;
+        gap: 2rem;
+        .post {
+            position: relative;
+            width: 27rem;
+            min-width: 27rem;
+            height: 48rem;
+            overflow: hidden;
+            .image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 300ms;
+            }
+            .name-content {
+                position: absolute;
+                text-shadow: 0 0 5px #000;
+                left: 0;
+                bottom: 0;
+                padding: 1rem;
+                transition: 600ms;
+            }
+            .description {
+                position: absolute;
+                left: 0;
+                bottom: -100%;
+                padding: 5.7rem 1rem 1rem;
+                font-size: 1.4rem;
+                opacity: 0;
+                margin: 0;
+                text-shadow: 0 0 .5rem rgb(0 0 0);
+                transition: 1s;
+            }
+            &:hover {
+                .image {
+                    filter: brightness(.5);
+                }
+                .name-content {
+                    bottom: calc(100% - 5.7rem);
+                }
+                .description {
+                    left: 0;
+                    bottom: 0;
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+@media (max-width:640px) {
+    #exploreWorld .posts {
+        overflow-y: hidden;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        .grid {
+            position: relative;
+            width: 100%;
+            grid-template-columns: repeat(3, 100%);
+            .post {width: 100%;}
+        }
+    }
+}
+
+/* ================================
+        The Journal
+=================================== */
+#journal {
+    .post {
+        text-align: center;
+        .image {
+            width: 100%;
+            height: 25rem;
+            object-fit: cover;
+            object-position: center;
+            transition: 300ms;
+            margin-bottom: 1rem;
+        }
+        .date {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+        }
+        .text {
+            padding: 1rem;
+            .title {
+                font-size: 2rem;
+                font-weight: 500;
+                margin: 1rem auto;
+            }
+            .extract {
+                font-size: 1.2rem;
+                font-weight: 300;
+                margin: 1rem auto;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+/* ================================
+        Footer
+=================================== */
+#footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: rgb(0 0 0 / .3);
+    color: var(--text-color, white); /* Use a variable for text color with a fallback to white */
+    font-size: 80%;
+}
