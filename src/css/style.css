@@ -151,7 +151,7 @@ ul, li {
                 width: 100%;
             }
         }
-        .map-marker {order: 5;}
+        .map-marker {display: none;}
     }
 }
 
