@@ -14,7 +14,7 @@
 <body>
     <header id="header">
         <div class="container">
-            <nav id="menuPrimary">
+            <nav id="menuPrimary" class="menu">
                 <a class="item-menu" href="#">Nosotros</a>
                 <a class="item-menu" href="#">Explorar</a>
                 <a class="item-menu map-marker" href="#"><i class="fa fa-map-marker"></i></a>
@@ -111,13 +111,52 @@
                 </div>
             </div>
         </section>
-        <section class="section section-bg text-center">
-            <img class="desktop" src="src/images/fondo-2.jpg" alt="Fondo">
-            <img class="mobile" src="src/images/fondo-2-mobile.jpg" alt="Fondo">
+        <section id="contacto" class="section section-bg text-center">
+            <img class="fondo desktop" src="src/images/fondo-2.jpg" alt="Fondo">
+            <img class="fondo mobile" src="src/images/fondo-2-mobile.jpg" alt="Fondo">
+            <div class="content">
+                <h2 class="section-title">Contacto</h2>
+                <form action="" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Teléfono</label>
+                        <input type="tel" id="tel" name="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group textarea">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Enviar">
+                    </div>
+                    <!-- <div id="message-response">
+                        <p id="response-message"></p>
+                    </div> -->
+                </form>
+            </div>
         </section>
     </main>
     <footer id="footer">
-        &copy; Derechos reservados Pinharanda Lautaro
+        <div class="left">
+            <span>&copy; Derechos reservados Pinharanda Lautaro</span>
+        </div>
+        <span class="separador-x"> | </span>
+        <hr class="separador-y">
+        <div class="right">
+            <nav class="menu">
+                <a class="item-menu" href="#">Nosotros</a>
+                <a class="item-menu" href="#">Explorar</a>
+                <a class="item-menu" href="#">El diario</a>
+                <a class="item-menu" href="#">Buscar</a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>

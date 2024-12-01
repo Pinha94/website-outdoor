@@ -38,11 +38,6 @@ ul, li {
 }
 .section {
     margin: 4rem auto 10rem;
-    &.section-bg {
-        margin: -12rem auto -6rem;
-        position: relative;
-        z-index: -1;
-    }
     .title-content {
         max-width: 600px;
         margin: 0 auto 8rem;
@@ -108,9 +103,10 @@ ul, li {
     width: 100%;
     padding: 2rem 0;
 }
-#menuPrimary {
+.menu {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-basis: fill;
     flex-wrap: wrap;
     gap: 3rem;
@@ -142,7 +138,7 @@ ul, li {
     }
 }
 @media (max-width:640px) {
-    #menuPrimary {
+    .menu {
         gap: 2rem 1rem;
         .buscador {
             flex-basis: calc(100% - 5rem);
@@ -178,12 +174,19 @@ ul, li {
         text-align: center;
         .title {
             font-size: 6rem;
-            margin-bottom: 2rem;
+            max-width: 27rem;
+            margin: 0 auto 2rem;
         }
         .subtitle {
             font-size: 1.6rem;
             font-weight: 300;
         }
+    }
+}
+
+@media (min-width:780px) {
+    #portada {
+        .title-content .title {max-width: none;}
     }
 }
 
@@ -299,17 +302,146 @@ ul, li {
 }
 
 /* ================================
+        Contacto
+=================================== */
+#contacto {
+    margin: -12rem 0 0;
+    position: relative;
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgb(0 0 0 / .3);
+        .section-title {
+            margin-bottom: 4rem;
+        }
+        #contactForm {
+            width: calc(100% - 6rem);
+            margin-bottom: 2rem;
+            .form-group {
+                text-align: left;
+                margin-bottom: 2rem;
+                label {
+                    display: block;
+                    font-size: 1.4rem;
+                }
+            }
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                height: 3.2rem;
+                padding:.5rem;
+                font-size: 1.4rem;
+                border: none;
+                background: transparent;
+                border-bottom: solid.2rem white;
+                margin-bottom: 1rem;
+                outline: none;
+                transition: 300ms;
+            }
+            textarea {
+                min-height: 8rem;
+                resize: vertical;
+                max-height: 20rem;
+            }
+            input[type="submit"] {
+                padding:.5rem 1rem;
+                font-size: 1.4rem;
+                display: block;
+                width: 100%;
+                border: none;
+                background-color: transparent;
+                border: solid 2px #fff;
+                color: white;
+                text-transform: uppercase;
+                transition: 300ms;
+            }
+            input[type="submit"]:hover {
+                background-color: var(--primary-color-hover);
+            }
+        }
+    }
+}
+
+@media (min-width:780px) {
+    #contacto {
+        .content {
+            .section-title {
+                margin-bottom: 6rem;
+            }
+            #contactForm {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 60rem;
+                gap: 2rem;
+                .form-group.textarea {
+                    grid-column: 1/4;
+                    textarea {min-height: 8rem;}
+                }
+            }
+        }
+    }
+}
+
+/* ================================
         Footer
 =================================== */
 #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
     position: relative;
+    line-height: 1;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 6rem;
-    padding: 2rem 0;
+    padding: 2rem 3rem;
     text-align: center;
     background-color: rgb(0 0 0 / .3);
     color: var(--text-color, white); /* Use a variable for text color with a fallback to white */
     font-size: 80%;
+    .left {
+        flex: 1;
+        text-align: right;
+    }
+    .separador-x {display: none;}
+    .separador-y {
+        width: calc(100% - 3rem);
+        margin: 0 auto;
+        opacity: 0.5;
+    }
+    .right {
+        flex: 1;
+        .menu {
+            flex-direction: column;
+            justify-content: start;
+            gap: 3rem;
+            .item-menu {flex-grow: 0;}
+        }
+    }
+}
+
+@media (min-width:780px) {
+    #footer {
+        margin-top: -6rem;
+        flex-direction: row;
+        height: 6rem;
+        .separador-x {display: block;}
+        .separador-y {display: none;}
+        .right {
+            .menu {
+                flex-direction: row;
+            }
+        }
+    }
 }
